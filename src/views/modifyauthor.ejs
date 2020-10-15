@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Author</title>
+   <!-- Favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="public/images/favicon_io-2/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="public/images/favicon_io-2/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon_io-2/favicon-32x32.png">
+   <link rel="manifest" href="favicon_io-2/site.webmanifest">
+   <!-- Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ruthie&display=swap" rel="stylesheet">
+   <!-- Font-awesome CDN -->
+   <script src="https://kit.fontawesome.com/432e149cf5.js" crossorigin="anonymous"></script>
+   <!-- CSS -->
+   <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+  <div class="top">
+    <!-- nav bar -->
+    <nav>
+        <img class= "logo signIn" src="/public/images/logo.png" alt="">
+        <ul class="nav-links signIn">
+            <%for(i=0;i<nav.length;i++){%>
+            <li>
+                <a href="<%=nav[i].links%>"><%=nav[i].name%></a>
+            </li>
+            <%}%>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class=" signIn title">
+            <h2 class="title-name"><%=title%></h2>
+    </div>
+ 
+
+
+
+ <!-- Form -->
+ <section id="Sign in Box">
+  <div class="container-fluid">
+    <div class="card" style="width: 50rem;">
+      <div class="card-body">
+        <h1 class="card-title"></h1>
+        <br>
+        <hr>
+
+        <form id="Author" onsubmit="return checkNewAuthor()" encType="multipart/form-data">
+          <div class="form-group">
+            <label>Author Name</label>
+            <hr>
+            <input type="text" class="form-control" id="authorName" name="authorName">
+            <p id="authorNameComment"></p>
+          </div>
+          <br>
+          <div class="form-group" >
+            <label>Author Genre</label>
+            <hr>
+            <input type="text"  class="form-control" id="authorGenre" name="authorGenre" >
+            <p id="authorGenreComment"></p>
+          </div>
+          <br>
+          <div class="form-group" >
+            <label>Author DOB</label>
+            <hr>
+            <input type="text" class="form-control" id="authorDOB" name="authorDOB">
+            <p id="authorDOBComment"></p>
+          </div>
+         <br>
+         <div class="form-group" >
+            <label>Author Book(1)</label>
+            <hr>
+            <input type="text" class="form-control" id="authorBook1" name="authorBook1">
+            <p id="authorBook1Comment"></p>
+          </div>
+         <br>
+         <div class="form-group" >
+            <label>Author Book(2)</label>
+            <hr>
+            <input type="text" class="form-control" id="authorBook2" name="authorBook2">
+            <p id="authorBook2Comment"></p>
+          </div>
+         <br>
+          <div class="form-group" >
+            <label>Add Image</label>
+            <hr>
+            <input type="file" class="btn btn-lg btn-block" required id="authorImage" name="authorImage" accept="image/*">
+            <p id="authorImageComment"></p>
+          </div>
+          <br>
+          <button type="submit" name="submit" value="upload!" class="btn btn-lg btn-block btn-light">Accept</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="signIn">
+  <h6>Follow Us</h6>
+  <i class="fab fa-facebook-square"></i>
+  <i class="fab fa-twitter-square"></i>
+  <i class="fab fa-instagram-square"></i>
+</footer>
+
+
+</div>
+
+<script src="/public/js/password.js"></script>
+</body>
+</html>

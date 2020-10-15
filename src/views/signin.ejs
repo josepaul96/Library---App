@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signing in</title>
+   <!-- Favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="public/images/favicon_io-2/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="public/images/favicon_io-2/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon_io-2/favicon-32x32.png">
+   <link rel="manifest" href="favicon_io-2/site.webmanifest">
+   <!-- Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ruthie&display=swap" rel="stylesheet">
+   <!-- Font-awesome CDN -->
+   <script src="https://kit.fontawesome.com/432e149cf5.js" crossorigin="anonymous"></script>
+   <!-- CSS -->
+   <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+  <div class="top">
+    <!-- nav bar -->
+    <nav>
+        <img class= "logo signIn" src="public/images/logo.png" alt="">
+        <ul class="nav-links signIn">
+            <%for(i=0;i<nav.length;i++){%>
+            <li>
+                <a href="<%=nav[i].links%>"><%=nav[i].name%></a>
+            </li>
+            <%}%>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class=" signIn title">
+            <h2 class="title-name"><%=title%></h2>
+    </div>
+ 
+
+
+
+ <!-- Form -->
+ <section id="Sign in Box">
+  <div class="container-fluid">
+    <div class="card" style="width: 50rem;">
+      <div class="card-body">
+        <h3 class="card-title">welcome back reader</h3>
+        <hr>
+
+        <form id="signInForm" onsubmit="return checkSignIn()">
+          <div class="form-group">
+            <label>Email / Phone Number</label>
+            <hr>
+            <input class="form-control" id="emailorphone" name="emailorphone">
+            <p id="userNameComment"><%=userNameComment%></p>
+          </div>
+          <hr>
+          <div class="form-group" >
+            <label>Password</label>
+            <hr>
+            <input type="password" onkeyup="passwordmeter(password)" class="form-control" id="password" name="password">
+            <p id="passwordComment"><%=passwordComment%></p>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-6 ">
+              <button type="submit" class="btn btn-lg  btn-outline-light signupbutton"><i class="fab fa-facebook-f"></i></button>
+            </div>
+            <div class="form-group col-lg-6 ">
+              <button type="submit" class="btn btn-lg btn-outline-light signupbutton"><i class="fab fa-google"></i> </button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-lg btn-block btn-light login">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="signIn">
+  <h6>Follow Us</h6>
+  <i class="fab fa-facebook-square"></i>
+  <i class="fab fa-twitter-square"></i>
+  <i class="fab fa-instagram-square"></i>
+</footer>
+
+
+</div>
+
+<script src="/public/js/password.js"></script>
+</body>
+</html>

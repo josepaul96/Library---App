@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup in</title>
+   <!-- Favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="public/images/favicon_io-2/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="public/images/favicon_io-2/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon_io-2/favicon-32x32.png">
+   <link rel="manifest" href="favicon_io-2/site.webmanifest">
+   <!-- Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ruthie&display=swap" rel="stylesheet">
+   <!-- Font-awesome CDN -->
+   <script src="https://kit.fontawesome.com/432e149cf5.js" crossorigin="anonymous"></script>
+   <!-- CSS -->
+   <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+  <div class="top">
+    <!-- nav bar -->
+    <nav>
+        <img class= "logo signIn" src="public/images/logo.png" alt="">
+        <ul class="nav-links signIn">
+            <%for(i=0;i<nav.length;i++){%>
+            <li>
+                <a href="<%=nav[i].links%>"><%=nav[i].name%></a>
+            </li>
+            <%}%>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class=" signIn title">
+            <h2 class="title-name"><%=title%></h2>
+    </div>
+
+
+ <!-- Form -->
+ <div class="content" id=signup>
+   <div class="signup">
+  <form id="signUpForm" onsubmit="return checkSignUp()">
+
+      <div class="form-group">
+              <label>First Name</label>
+            <input type="text" class="form-control" placeholder="First name" id="firstName" name="firstName">
+            <p id="firstNameComment"></p>
+      </div>  
+
+      <div class="form-group">
+              <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last name" id="lastName" name="lastName">
+            <p id="lastNameComment"></p> 
+        </div>
+
+          <div class="form-group">
+          <label for="inputAddress">Email or Mobile</label>
+          <input type="text" class="form-control" id="emailorphone" placeholder="iamjp96@gmail.com / 8130265439" name="emailorphone">
+          <p id="userNameComment"></p>
+          </div>
+      
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" onkeydown="passwordmeter(password)" id="password" name="password">
+          <p id="passwordComment"></p>
+        </div>
+
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" class="form-control"  onkeydown="passwordmeter(confirmPassword)" id="confirmPassword">
+          <p id="confirmPassComment"></p>
+        </div>
+      
+      
+        <div class="form-group">
+          <label for="inputCity">Date of Birth</label>
+          <input type="text" class="form-control" id="DOB" placeholder="DD-MM-YYYY" name="DOB">
+          <p id="dobComment"></p>
+        </div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-light col-md-12 go" >Sign Up</button>
+    
+    </form>
+  </div>
+ </div>
+
+</div>
+
+
+<script src="/public/js/password.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>

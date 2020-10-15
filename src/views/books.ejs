@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Of Alexandria</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="public/images/favicon_io-2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/images/favicon_io-2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon_io-2/favicon-32x32.png">
+    <link rel="manifest" href="favicon_io-2/site.webmanifest">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ruthie&display=swap" rel="stylesheet">
+    <!-- Font-awesome CDN -->
+    <script src="https://kit.fontawesome.com/432e149cf5.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+<!--Top Part -->
+    <div class="top">
+    <!-- nav bar -->
+    <nav>
+        <img class= "logo" src="/public/images/logo.png" alt="">
+        <ul class="nav-links">
+            <%for(i=0;i<nav.length;i++){%>
+            <li>
+                <a href="<%=nav[i].links%>"><%=nav[i].name%></a>
+            </li>
+            <%}%>
+        </ul>
+        <ul class="entry">
+            <%for(i=0;i<entry.length;i++){%>
+            <li>
+                <a href="<%=entry[i].links%>"><%=entry[i].name%></a>
+            </li>
+            <%}%>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="title">
+            <h2 class="title-name"><%=title%></h2>
+            <div  class="search-box">
+                <input class= "search-text" type="text" placeholder="Seek and you shall find">
+                <a href=""><i class="fas fa-search"></i></a>
+            </div>
+    </div>
+</div>
+
+<!-- Main Body -->
+    <div class="content">
+        <br>
+        <%for(i=0;i<books.length;i++){%>
+        <div class="content-box">
+            <div class="author-picture">
+                <img src="<%=books[i].image%>" alt="">
+            </div>
+            <div class="content-deets" id="content-deets1">
+                <h1>
+                   <%=books[i].title%>
+                </h1>
+                <a id="" href="#"><%=books[i].author%></a>
+                <p> <%=books[i].genre%></p>
+                <a href="/<%=user%>/books/<%=books[i]._id%>"> Read More</a>
+            </div>   
+        </div>
+        <br>
+        <hr>
+        <br>
+        <%}%>
+        <div class="show-more">
+            <a href="#">More</a>
+        </div>
+    </div>
+    <footer>
+        <h6>Follow Us</h6>
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-instagram-square"></i>
+    </footer>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
